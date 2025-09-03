@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía Dinámica: Auditoría de Seguridad y Ética</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 300px;
+            width: 300px;
+        }
+
+        .animated-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .animated-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .tab-btn.active {
+            background-color: #2563eb;
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800">
+
+    <main class="container mx-auto px-4 py-8 md:py-16">
+        <!-- Encabezado -->
+        <header class="text-center mb-16 animated-section">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Utplogonuevo.svg/2560px-Utplogonuevo.svg.png"
+                alt="Logo Universidad" class="mx-auto h-16 w-auto mb-8">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-blue-700 mb-4">Práctica de Código de Ética en la
+                Auditoría</h1>
+            <p class="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">Caso práctico para la <strong>Universidad San
+                    Marcos Digital</strong>.</p>
+            <p class="text-md md:text-lg text-slate-500 max-w-3xl mx-auto mt-2">Presentado por: <strong>Jean Pierre
+                    Medrano Rodriguez</strong></p>
+        </header>
+
+        <!-- 1. Introducción -->
+        <section class="mb-20 animated-section">
+            <h2 class="text-3xl font-bold text-center mb-10">1. Introducción y Objetivo</h2>
+            <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+                <p class="text-slate-600 text-lg text-center">El presente informe tiene como finalidad analizar los
+                    hallazgos detectados durante la auditoría de sistemas en la "Universidad San Marcos Digital", con un
+                    enfoque central en la aplicación del código de ética profesional del auditor. Se busca no solo
+                    reportar las vulnerabilidades técnicas, sino también enmarcar las recomendaciones dentro de un
+                    contexto de integridad, confidencialidad y responsabilidad, principios fundamentales para garantizar
+                    la confianza y la protección de la información en la organización.</p>
+            </div>
+        </section>
+
+        <!-- 2. Principios del Código de Ética -->
+        <section class="mb-20 animated-section">
+            <h2 class="text-3xl font-bold text-center mb-10">2. Principios del Código de Ética</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 text-center">
+                <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-blue-500">
+                    <div class="text-4xl mb-3">🛡️</div>
+                    <h3 class="font-bold text-lg text-blue-800">Integridad</h3>
+                    <p class="text-sm text-slate-600 mt-2">Honestidad y transparencia en la recolección de evidencias.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-blue-500">
+                    <div class="text-4xl mb-3">🎯</div>
+                    <h3 class="font-bold text-lg text-blue-800">Objetividad</h3>
+                    <p class="text-sm text-slate-600 mt-2">Conclusiones basadas en hechos verificables y evidencia
+                        técnica.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-blue-500">
+                    <div class="text-4xl mb-3">🔒</div>
+                    <h3 class="font-bold text-lg text-blue-800">Confidencialidad</h3>
+                    <p class="text-sm text-slate-600 mt-2">Máxima protección de la información sensible recopilada.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-blue-500">
+                    <div class="text-4xl mb-3">🧠</div>
+                    <h3 class="font-bold text-lg text-blue-800">Competencia</h3>
+                    <p class="text-sm text-slate-600 mt-2">Conocimientos técnicos actualizados para recomendaciones
+                        efectivas.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-blue-500">
+                    <div class="text-4xl mb-3">⚖️</div>
+                    <h3 class="font-bold text-lg text-blue-800">Responsabilidad</h3>
+                    <p class="text-sm text-slate-600 mt-2">Reportar debilidades que impacten negativamente a la
+                        institución.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Hallazgos del Caso Práctico -->
+        <section class="mb-20 p-8 bg-white rounded-2xl shadow-2xl animated-section">
+            <h2 class="text-3xl font-bold text-center mb-2">3. Hallazgos del Caso Práctico</h2>
+            <p class="text-center text-slate-600 mb-8">Durante la auditoría a la red académica, se detectaron las
+                siguientes vulnerabilidades críticas.</p>
+
+            <div class="flex justify-center mb-8">
+                <div class="flex space-x-2 bg-slate-200 p-2 rounded-full">
+                    <button class="tab-btn active font-semibold py-2 px-6 rounded-full"
+                        data-finding="finding1">Credenciales Débiles</button>
+                    <button class="tab-btn font-semibold py-2 px-6 rounded-full" data-finding="finding2">Carpetas sin
+                        Protección</button>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/2">
+                    <h3 id="finding-title" class="text-2xl font-bold text-blue-800 mb-4"></h3>
+                    <p id="finding-description" class="text-slate-600 mb-4 h-24"></p>
+                    <div class="bg-slate-100 p-4 rounded-lg">
+                        <h4 class="font-bold mb-2">Impacto Potencial:</h4>
+                        <ul id="finding-impact" class="list-disc list-inside text-sm text-slate-600 space-y-1">
+                        </ul>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex flex-col items-center">
+                    <h4 class="font-bold text-lg mb-4">Nivel de Riesgo</h4>
+                    <div class="chart-container mx-auto">
+                        <canvas id="riskChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Recomendaciones y Principios Éticos Aplicados -->
+        <section class="mb-20 animated-section">
+            <h2 class="text-3xl font-bold text-center mb-10">4. Recomendaciones y Principios Éticos Aplicados</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-xl flex flex-col">
+                    <div class="flex-grow">
+                        <div class="flex items-center mb-4">
+                            <span class="text-4xl mr-4">🔑</span>
+                            <h3 class="font-bold text-xl text-blue-800">Fortalecer Política de Contraseñas</h3>
+                        </div>
+                        <p class="text-sm text-slate-600 mb-4"><strong>Acción Clave:</strong> Exigir contraseñas
+                            robustas (+12 caracteres, complejas) y prohibir su reutilización para blindar el acceso a
+                            los sistemas.</p>
+                    </div>
+                    <div class="bg-blue-50 border-t-2 border-blue-200 text-blue-800 p-3 rounded-b-lg mt-auto">
+                        <p class="text-sm font-semibold">Principio Ético: <span class="font-normal">Responsabilidad y
+                                Competencia Profesional.</span></p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-xl flex flex-col">
+                    <div class="flex-grow">
+                        <div class="flex items-center mb-4">
+                            <span class="text-4xl mr-4">👤</span>
+                            <h3 class="font-bold text-xl text-blue-800">Implementar Control de Acceso</h3>
+                        </div>
+                        <p class="text-sm text-slate-600 mb-4"><strong>Acción Clave:</strong> Aplicar el principio de
+                            "menor privilegio" para que cada usuario acceda únicamente a la información indispensable
+                            para su función.</p>
+                    </div>
+                    <div class="bg-blue-50 border-t-2 border-blue-200 text-blue-800 p-3 rounded-b-lg mt-auto">
+                        <p class="text-sm font-semibold">Principio Ético: <span class="font-normal">Confidencialidad e
+                                Integridad.</span></p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-xl flex flex-col">
+                    <div class="flex-grow">
+                        <div class="flex items-center mb-4">
+                            <span class="text-4xl mr-4">🎓</span>
+                            <h3 class="font-bold text-xl text-blue-800">Programa de Capacitación</h3>
+                        </div>
+                        <p class="text-sm text-slate-600 mb-4"><strong>Acción Clave:</strong> Lanzar un programa de
+                            formación continua y obligatoria sobre ciberseguridad, phishing y manejo de datos seguros.
+                        </p>
+                    </div>
+                    <div class="bg-blue-50 border-t-2 border-blue-200 text-blue-800 p-3 rounded-b-lg mt-auto">
+                        <p class="text-sm font-semibold">Principio Ético: <span class="font-normal">Responsabilidad y
+                                Competencia Profesional.</span></p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-xl flex flex-col">
+                    <div class="flex-grow">
+                        <div class="flex items-center mb-4">
+                            <span class="text-4xl mr-4">🔍</span>
+                            <h3 class="font-bold text-xl text-blue-800">Auditorías y Monitoreo</h3>
+                        </div>
+                        <p class="text-sm text-slate-600 mb-4"><strong>Acción Clave:</strong> Establecer auditorías
+                            internas recurrentes y monitorear registros de acceso para detectar y responder a amenazas a
+                            tiempo.</p>
+                    </div>
+                    <div class="bg-blue-50 border-t-2 border-blue-200 text-blue-800 p-3 rounded-b-lg mt-auto">
+                        <p class="text-sm font-semibold">Principio Ético: <span class="font-normal">Objetividad e
+                                Integridad.</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 5. Normativas y Estándares de Referencia -->
+        <section class="mb-20 animated-section">
+            <h2 class="text-3xl font-bold text-center mb-10">5. Normativas y Estándares de Referencia</h2>
+            <p class="text-center text-slate-600 mb-8 max-w-3xl mx-auto">Las recomendaciones se alinean con marcos de
+                trabajo y regulaciones reconocidas para garantizar las mejores prácticas.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-green-500">
+                    <h3 class="font-bold text-xl text-green-800 mb-2">ISO/IEC 27001</h3>
+                    <p class="text-sm text-slate-600">Estándar para la <strong>gestión de la seguridad de la
+                            información</strong>. Ayuda a establecer, implementar y mejorar continuamente un Sistema de
+                        Gestión de Seguridad de la Información (SGSI).</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-green-500">
+                    <h3 class="font-bold text-xl text-green-800 mb-2">COBIT</h3>
+                    <p class="text-sm text-slate-600">Marco de referencia para el <strong>gobierno y la gestión de
+                            TI</strong>. Asegura que la tecnología de la información esté alineada con los objetivos del
+                        negocio, optimizando la inversión y gestionando los riesgos.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-green-500">
+                    <h3 class="font-bold text-xl text-green-800 mb-2">Ley N° 29733 (Perú)</h3>
+                    <p class="text-sm text-slate-600"><strong>Ley de Protección de Datos Personales</strong>. Establece
+                        los principios que rigen el tratamiento de datos personales, garantizando el derecho fundamental
+                        de las personas a la protección de su privacidad.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Conclusión -->
+        <footer class="text-center pt-10 border-t border-slate-200 animated-section">
+            <h2 class="text-3xl font-bold text-blue-700 mb-4">6. Conclusión de la Práctica</h2>
+            <p class="text-lg text-slate-600 max-w-3xl mx-auto">Los hallazgos aquí presentados, aunque críticos, representan una oportunidad invaluable para que la <strong>"Universidad San
+            Marcos Digital" </strong> fortalezca su cultura de seguridad. La implementación de las recomendaciones no solo mitigará los
+            riesgos técnicos, sino que también reforzará el compromiso ético de la institución con la protección de su activo más
+            valioso: la información.</p>
+        </footer>
+
+    </main>
+
+    <script>
+        const findingsData = {
+            finding1: {
+                title: "Uso de Contraseñas Débiles",
+                description: "Se detectó el uso generalizado de contraseñas débiles por parte del personal docente, exponiendo las cuentas a un alto riesgo de ataques de fuerza bruta o adivinación.",
+                impact: [
+                    "Compromiso de cuentas",
+                    "Acceso no autorizado a sistemas",
+                    "Suplantación de identidad",
+                    "Fuga de información confidencial"
+                ],
+                risk: {
+                    level: "Alto",
+                    value: 75,
+                    color: "rgb(234, 179, 8)" // yellow-500
+                }
+            },
+            finding2: {
+                title: "Carpetas Compartidas sin Protección",
+                description: "Se identificaron carpetas en la red con información académica sensible (exámenes, calificaciones) sin una configuración adecuada de permisos de acceso.",
+                impact: [
+                    "Pérdida de integridad de materiales",
+                    "Filtración de exámenes",
+                    "Manipulación de calificaciones",
+                    "Vulneración de la confidencialidad"
+                ],
+                risk: {
+                    level: "Crítico",
+                    value: 95,
+                    color: "rgb(220, 38, 38)" // red-600
+                }
+            }
+        };
+
+        let riskChart;
+
+        const updateContent = (findingId) => {
+            const data = findingsData[findingId];
+
+            document.getElementById('finding-title').textContent = data.title;
+            document.getElementById('finding-description').textContent = data.description;
+
+            const impactList = document.getElementById('finding-impact');
+            impactList.innerHTML = '';
+            data.impact.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                impactList.appendChild(li);
+            });
+
+            updateChart(data.risk);
+        };
+
+        const updateChart = (risk) => {
+            riskChart.data.datasets[0].data = [risk.value, 100 - risk.value];
+            riskChart.data.datasets[0].backgroundColor = [risk.color, '#e5e7eb'];
+            riskChart.options.plugins.title.text = risk.level;
+            riskChart.options.plugins.title.color = risk.color;
+            riskChart.update();
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const ctx = document.getElementById('riskChart').getContext('2d');
+            riskChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Riesgo', 'Seguridad'],
+                    datasets: [{
+                        data: [0, 100],
+                        backgroundColor: ['#e5e7eb', '#e5e7eb'],
+                        borderColor: '#fff',
+                        borderWidth: 4,
+                        cutout: '70%'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { enabled: false },
+                        title: {
+                            display: true,
+                            text: '',
+                            position: 'top',
+                            align: 'center',
+                            font: {
+                                size: 24,
+                                weight: 'bold'
+                            },
+                            padding: { top: 10, bottom: 30 }
+                        }
+                    }
+                }
+            });
+
+            const tabs = document.querySelectorAll('.tab-btn');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    updateContent(tab.dataset.finding);
+                });
+            });
+
+            updateContent('finding1');
+
+            const sections = document.querySelectorAll('.animated-section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+
+</html>
